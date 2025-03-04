@@ -8,7 +8,7 @@ class SagaStep:
         self.status = StepStatus.PENDING
         self.transaction_id = str(uuid.uuid4())
 
-    def execute(self, context: Dict[str, Any]) -> bool:
+    def do(self, context: Dict[str, Any]) -> bool:
         raise NotImplementedError("Subclasses must implement execute method")
 
     def compensate(self, context: Dict[str, Any]) -> bool:

@@ -5,7 +5,7 @@ class PaymentStep(SagaStep):
     def __init__(self):
         super().__init__("Payment")
 
-    def execute(self, context: Dict[str, Any]) -> bool:
+    def do(self, context: Dict[str, Any]) -> bool:
         try:
             total_amount = sum(product['price'] * product['quantity'] 
                                for product in context['products'])

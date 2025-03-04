@@ -5,7 +5,7 @@ class ShippingStep(SagaStep):
     def __init__(self):
         super().__init__("Shipping")
 
-    def execute(self, context: Dict[str, Any]) -> bool:
+    def do(self, context: Dict[str, Any]) -> bool:
         try:
             # Simulate shipping order creation
             shipping_details = {

@@ -5,7 +5,7 @@ class InventoryStep(SagaStep):
     def __init__(self):
         super().__init__("Inventory")
 
-    def execute(self, context: Dict[str, Any]) -> bool:
+    def do(self, context: Dict[str, Any]) -> bool:
         try:
             for product in context['products']:
                 self.logger.info(f"Reserved {product['quantity']} of product {product['id']}")
