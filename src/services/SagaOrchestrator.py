@@ -5,7 +5,7 @@ class SagaOrchestrator:
     def __init__(self, steps: List[SagaStep]):
         self.steps = steps
 
-    def execute(self, context: Dict[str, Any]) -> bool:
+    def do(self, context: Dict[str, Any]) -> bool:
         for step in self.steps:
             if not step.do(context):
                 self._compensate_steps(context, step)

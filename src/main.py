@@ -31,7 +31,7 @@ async def process_checkout(request: CheckoutRequest):
     orchestrator = SagaOrchestrator(saga_steps)
     
     try:
-        success = orchestrator.execute(context)
+        success = orchestrator.do(context)
         if success:
             return {"status": "success", "message": "Checkout completed"}
         else:
